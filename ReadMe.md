@@ -63,7 +63,7 @@ Créer un fichier test.txt
 Écrire dans le fichier : "fichier test"
 
 ### Quelques commandes utiles avant de faire le commit
-Pour voir les différences pportées depuis le dernier commit
+Pour voir les différences apportées depuis le dernier commit
 ```
 git diff
 ```
@@ -224,8 +224,7 @@ git pull origin master
 ```
 Gérer les conflits s'il y en a
 ```
-git push origin master
-git push --tags origin
+git push origin master --follow-tags
 ```
 
 * Nous avons donc appris à créer une branche de release puis la clore en la fusionnant sur les branches master et develop.
@@ -297,8 +296,7 @@ git remote add client ../Client
 
 ### Livrer une première version de l'application
 ```
-git push client master
-git push --tags client
+git push client master --follow-tags
 ```
 
 Faîtes des modifications sur la version côté Local et Client
@@ -320,11 +318,9 @@ Gérer les conflits s'il y en a
 git commit -m 'message'
 git tag v2.0
 git branch -D livraison
-git push -f client master
-git push --tags client
+git push -f client master --follow-tags
 git push origin develop
-git push origin master
-git push --tags origin
+git push origin master --follow-tags
 ```
 
 ![git lg](/images/12.PNG)
